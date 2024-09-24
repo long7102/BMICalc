@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/Favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Body Mass Index Calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="container">
+        <div class="content">
+          <div class="logo"><img src="assets/images/logo.svg" alt="" /></div>
+          <h1>Body Mass Index Calculator</h1>
+          <p>
+            Hiểu rõ hơn về cân nặng và chiều cao của bạn bằng cách sử dụng công cụ tính chỉ số khối cơ thể (BM) của
+            chúng tôi. Mặc dù BMI không phải là yếu tố duy nhất quyết định cân nặng khỏe mạnh nhưng nó mang lại điểm
+            khởi đầu có giá trị để đánh giá sức khỏe tổng thể và tinh thần của bạn.
+          </p>
+        </div>
+        <div class="calculator">
+          <div class="form" id="form">
+            <h3>Nhập thông tin chi tiết của bạn dưới đây</h3>
+            <div class="units">
+              <div class="form-control">
+                <input type="radio" name="input" value="metric" id="metric" class="radio active" checked />
+                <label for="metric">Số liệu</label>
+              </div>
+              <div class="form-control">
+                <input type="radio" name="input" value="imperial" id="imperial" class="radio" />
+                <label for="imperial">Cụ thể</label>
+              </div>
+            </div>
+            <div class="infos">
+              <div class="metric">
+                <div class="form-control">
+                  <label for="height">Chiều cao</label>
+                  <div class="input-container">
+                    <input type="number" id="height" placeholder="0" />
+                    <span class="unit-height" id="unit-height">cm</span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <label for="weight">Cân nặng</label>
+                  <div class="input-container">
+                    <input type="number" id="weight" placeholder="0" />
+                    <span class="unit-weight" id="unit-weight">kg</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="imperial">
+                <div class="form-control">
+                  <label for="height">Chiều cao</label>
+                  <div class="container-flex">
+                    <div class="input-container">
+                      <input type="number" id="feet" class="feet" placeholder="0">
+                      <small>ft</small>
+                    </div>
+                    <div class="input-container">
+                      <input type="number" id="inch" class="inch" placeholder="0">
+                      <small>in</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <label for="weight">Cân nặng</label>
+                  <div class="container-flex">
+                    <div class="input-container">
+                      <input type="number" id="st" class="st" placeholder="0">
+                      <small>st</small>
+                    </div>
+                    <div class="input-container">
+                      <input type="number" id="lbs" class="lbs" placeholder="0">
+                      <small>lbs</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="container-result" id="container-result">
+            <div class="bmi" id="bmi">
+              <div class="result-heading" id="result-heading">
+                <p>Your BMI is...</p>
+                <div class="result" id="result">23.4</div>
+              </div>
+              <div class="result-text">
+                <p>BMI đề xuất của bạn là<span id="classification"></span>. Cân nặng lí tưởng của bạn nằm giữa . <span
+                    id="min-weight"></span> - <span id="max-weight"></span> hãy xây cho bản thân 1 kế hoạch tập
+                  luyện</span></p>
+              </div>
+            </div>
+            <div class="welcome-text" id="welcome">
+              <h3>Xin chào!</h3>
+              <p>Nhập cân nặng của bạn và xem chỉ số BMI</p>
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Section explanation -->
+      <section class="explanation">
+        <img src="assets/images/pattern-curved-line-left.svg" alt="curve" class="curve-left">
+        <div class="image">
+          <img src="assets/images/full-body-workout.jpg" alt="man-eating" />
+        </div>
+        <div class="content">
+          <h2>Chỉ số BMI của bạn có ý nghĩa gì</h2>
+          <p>
+            Chỉ số BMI từ 18,5 đến 24,9 được coi là 'cân nặng khỏe mạnh'. Duy trì cân nặng khỏe mạnh có thể làm giảm
+            nguy cơ gặp phải các vấn đề sức khỏe sau này, chẳng hạn như béo phì và tiểu đường loại 2. Hãy hướng đến chế
+            độ ăn uống bổ dưỡng với hàm lượng chất béo và đường thấp, kết hợp nhiều trái cây và rau quả. Ngoài ra, hãy
+            cố gắng hoạt động thể chất thường xuyên, lý tưởng nhất là khoảng 30 phút mỗi ngày trong năm ngày một tuần.
+          </p>
+        </div>
+      </section>
+      <!-- Section Habits -->
+      <section class="positive-habits">
+        <div>
+          <img src="assets/images/icon-eating.svg" alt="eating" />
+          <div>
+            <h3>Chế độ ăn uống lành mạnh</h3>
+            <p>
+              Ăn uống lành mạnh giúp kiểm soát cân nặng, phòng ngừa bệnh tật, tiêu hóa tốt hơn, tăng khả năng miễn dịch,
+              tinh thần minh mẫn và cải thiện tâm trạng.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="assets/images/icon-exercise.svg" alt="exercise" />
+          <div>
+            <h3>Tập luyện thường xuyên</h3>
+            <p>
+              Tập thể dục giúp cải thiện thể lực, hỗ trợ kiểm soát cân nặng, nâng cao tâm trạng và
+              giảm nguy cơ mắc bệnh, thúc đẩy sức khỏe và tuổi thọ.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="assets/images/icon-sleep.svg" alt="sleep" />
+          <div>
+            <h3>Ngủ đủ giấc</h3>
+            <p>
+              Giấc ngủ giúp tăng cường sự minh mẫn về tinh thần, sự ổn định về cảm xúc và sức khỏe thể chất, thúc đẩy
+              quá trình phục hồi và trẻ hóa toàn diện.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section Limitations -->
+      <section class="limitations">
+        <img src="assets/images/pattern-curved-line-right.svg" alt="curve" class="curve">
+        <div class="limitations-content">
+          <h2>Giới hạn của BMI</h2>
+          <p>
+            Mặc dù BMI thường là chỉ số thực tế về cân nặng khỏe mạnh, nhưng nó
+            không phù hợp với mọi người. Các nhóm cụ thể nên cân nhắc cẩn thận
+            kết quả BMI của họ và trong một số trường hợp, phép đo này có thể
+            không có lợi khi sử dụng.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card gender">
+            <div class="card-heading">
+              <img src="assets/images/icon-gender.svg" alt="" />
+              <h4>Giới tính</h4>
+            </div>
+            <p>
+              Sự phát triển và thành phần mỡ cơ thể của bé gái và bé trai thay đổi
+              theo độ tuổi. Do đó, độ tuổi và giới tính của trẻ được xem xét
+              khi đánh giá BMI của trẻ.
+            </p>
+          </div>
+          <div class="card age">
+            <div class="card-heading">
+              <img src="assets/images/icon-age.svg" alt="" />
+              <h4>Tuổi</h4>
+            </div>
+            <p>
+              Ở những người lớn tuổi, lượng mỡ trong cơ thể tăng và mất cơ có thể khiến
+              BMI đánh giá thấp lượng mỡ trong cơ thể.
+            </p>
+          </div>
+          <div class="card muscle">
+            <div class="card-heading">
+              <img src="assets/images/icon-muscle.svg" alt="" />
+              <h4>Cơ bắp</h4>
+            </div>
+            <p>
+              BMI có thể phân loại sai những người có cơ bắp là thừa cân hoặc béo phì,
+              vì nó không phân biệt được cơ với mỡ.
+            </p>
+          </div>
+          <div class="card pregnancy">
+            <div class="card-heading">
+              <img src="assets/images/icon-pregnancy.svg" alt="" />
+              <h4>Mang thai</h4>
+            </div>
+            <p>
+              Các bà mẹ tương lai sẽ tăng cân do em bé đang lớn dần. Duy trì BMI khỏe mạnh trước khi mang thai là điều nên làm để
+              giảm thiểu rủi ro sức khỏe cho cả mẹ và con.
+            </p>
+          </div>
+          <div class="card race">
+            <div class="card-heading">
+              <img src="assets/images/icon-race.svg" alt="" />
+              <h4>Chủng tộc</h4>
+            </div>
+            <p>
+              Một số vấn đề sức khỏe có thể ảnh hưởng đến những người có nguồn gốc da đen và
+              Châu Á có BMI thấp hơn những người khác. Để tìm hiểu thêm, bạn nên
+              thảo luận vấn đề này với bác sĩ gia đình hoặc y tá hành nghề của mình.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <center><small>
+        <p>&copy;
+          <script>document.write(new Date().getFullYear())</script>Việt Long
+        </p>
+      </small>
+    </center>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
