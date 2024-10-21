@@ -43,13 +43,13 @@ function calculateBMI(e) {
     maxWeight.innerText = `${max}kgs`;
 
     if (bmi < 18.5) {
-      classification.innerText = 'Underweight';
+      classification.innerText = 'Thừa cân';
     } else if (bmi >= 18.5 && bmi <= 24.9) {
-      classification.innerText = 'Healthy weight';
+      classification.innerText = 'Cân đối';
     } else if (bmi > 24.9 && bmi <= 29.9) {
-      classification.innerText = 'Overweight';
+      classification.innerText = 'Thừa cân';
     } else {
-      classification.innerText = 'Obese';
+      classification.innerText = 'Béo phì';
     }
 
     console.log('test');
